@@ -1,0 +1,10 @@
+<h1>Persons#profile</h1>
+<p>Find me in app/views/persons/profile.html.erb</p>
+<% if user_signed_in? %>
+  <li><h4>Logged in as <strong><%= current_user.email %></strong>.</h4></li>
+  <li><%= link_to 'Edit profile', edit_user_registration_path %></li> 
+  <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+<% else %>
+  <li><%= link_to "Sign up", new_user_registration_path %> </li>
+  <li><%= link_to "Login", new_user_session_path %></li>
+<% end %>
